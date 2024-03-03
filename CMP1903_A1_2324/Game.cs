@@ -12,7 +12,7 @@ namespace Dice_Game_OOP_Assessment
     internal class Game
     {
         /// <summary>
-        /// Method that displays User-Interface and navigate menus 
+        /// Method that displays User-Interface and Takes User Input to Navigate Menus. 
         /// </summary>
         static void UI() 
         {
@@ -45,7 +45,7 @@ namespace Dice_Game_OOP_Assessment
             
         }
         /// <summary>
-        /// Starts game by rolling three dice objects and displaying the results, sum and Game Total.
+        /// Starts game by instantiating three dice objects, calling their method.Roll and displaying the results, sum and Game Total.
         /// </summary>
         static void GameStart()
         {
@@ -59,7 +59,7 @@ namespace Dice_Game_OOP_Assessment
             Console.WriteLine("The sum of the rolls is: {0}", (roll1.Roll + roll2.Roll + roll3.Roll));
             Console.WriteLine("Game Total: {0}", roll1.RoundTotal);
             Console.WriteLine("--------------------------------");
-            RestartGame();//calls restart game method
+            RestartGame();
 
         }
         /// <summary>
