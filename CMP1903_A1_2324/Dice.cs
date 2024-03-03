@@ -9,15 +9,14 @@ namespace Dice_Game_OOP_Assessment
 {
     internal class Dice
     {
-        private static Random random = new Random(); 
+        private static Random random = new Random(); //instantiate private static value for Random So same seed generation cannot occour.
         private int _roll;
         private static int _roundTotal;
 
         public Dice()
         {
-            
             _roll = DiceRoller(); // 
-            _roundTotal += UpdateTotal();
+            _roundTotal += _roll;//UpdateTotal();
         }
 
         public int Roll
@@ -35,14 +34,5 @@ namespace Dice_Game_OOP_Assessment
         {
             return random.Next(1, 7);
         }
-        private int UpdateTotal() 
-        {
-            return Roll;
-        
-        }
-        
-
-
-
     }
 }

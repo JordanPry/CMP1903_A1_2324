@@ -33,7 +33,6 @@ namespace Dice_Game_OOP_Assessment
                     break;
                 default:
                     Console.WriteLine("\"Invalid input, returning to start screen.\"");
-                    UI(); // recursive 
                     break;
                     
             
@@ -51,7 +50,7 @@ namespace Dice_Game_OOP_Assessment
             Console.WriteLine("The Second dice rolled a: {0}", roll2.Roll);
             Console.WriteLine("The Third dice rolled a: {0}", roll3.Roll);
             Console.WriteLine("The sum of the rolls is: {0}", (roll1.Roll + roll2.Roll + roll3.Roll));
-            Console.WriteLine("Round Total: {0}", roll3.RoundTotal);
+            Console.WriteLine("Game Total: {0}", roll1.RoundTotal);
             Console.WriteLine("--------------------------------");
             RestartGame();//calls restart game method
 
