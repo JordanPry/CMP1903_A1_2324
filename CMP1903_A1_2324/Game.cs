@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace Dice_Game_OOP_Assessment
 {
+    /// <summary>
+    /// Represents main game logic and UI.
+    /// </summary>
     internal class Game
     {
-        //Method that displays User-Interface and navigate menus 
+        /// <summary>
+        /// Method that displays User-Interface and navigate menus 
+        /// </summary>
         static void UI() 
         {
-            string gameChoice; //string variable to store user choice 
+            string gameChoice; 
             Console.WriteLine("--------------------------------"); 
             Console.WriteLine("Welcome To the Dice Rolling Game");
             Console.WriteLine("Press 1 to Start the Game");
@@ -39,9 +44,11 @@ namespace Dice_Game_OOP_Assessment
             }
             
         }
+        /// <summary>
+        /// Starts game by rolling three dice objects and displaying the results, sum and Game Total.
+        /// </summary>
         static void GameStart()
         {
-            //creates instance of Dice classes assigned to roll1, roll2 and roll 3
             Dice roll1 = new Dice(); 
             Dice roll2 = new Dice();
             Dice roll3 = new Dice();
@@ -55,13 +62,16 @@ namespace Dice_Game_OOP_Assessment
             RestartGame();//calls restart game method
 
         }
-        //Method to restart the Game
-        static void RestartGame() 
+        /// <summary>
+        /// Displays options for restarting game, returning to Main Menu or closing game.
+        /// </summary>
+        static void RestartGame()
         {
             string restartChoice;
             Console.WriteLine("--------------------------------");
             Console.WriteLine("Enter 1 to play again");
             Console.WriteLine("Enter 2 to Return to Main Menu");
+            Console.WriteLine("Enter 3 to Exit Game");
             Console.WriteLine("--------------------------------");
             restartChoice = Console.ReadLine();
             switch (restartChoice) 
@@ -72,6 +82,9 @@ namespace Dice_Game_OOP_Assessment
                 case "2":
                     UI();
                     break;
+                case "3":
+                    CloseGame();
+                    break;
                 default:
                     Console.WriteLine("Invalid input, try again.");
                     RestartGame();
@@ -81,7 +94,10 @@ namespace Dice_Game_OOP_Assessment
             }
         
         }
-        static void CloseGame() 
+        /// <summary>
+        ///Displays Goodbye Message. Delays for 2 seconds. Uses Environment.Exit(0) to close Program.
+        /// </summary>
+        static void CloseGame()
         {
             Console.WriteLine("--------------------------------");
             Console.WriteLine("Thank you For playing.\nSee you again soon!\nGoodbye!");
@@ -89,13 +105,18 @@ namespace Dice_Game_OOP_Assessment
             System.Threading.Thread.Sleep(2000);
             Environment.Exit(0);
         }
-
+        /// <summary>
+        /// //Opens Debug Mode Method. Instantiates New Debug Object. Calls method from within the Class.
+        /// </summary>
         static void DebugMode() 
         {
             Testing testing = new Testing();
-            testing.TestResult(); //Call Test Result Method from within the Testing Class
+            testing.TestResult(); 
         
-        }
+        }/// <summary>
+        /// Main entry point of program. Continously displays the UI.
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             while (true) 
