@@ -12,16 +12,18 @@ namespace Dice_Game_OOP_Assessment
 {
     internal class Testing
     {
-        private Dice _testRoll = new Dice(); //Instantiates private Dice Object called _testRoll.
-        private Dice _testSum1 = new Dice(); //Instantiates private Dice Object called _testSum1.
-        private Dice _testSum2 = new Dice(); //Instantiates private Dice Object called _testSum2.
-        private Dice _testSum3 = new Dice(); //Instantiates private Dice Object called _testSum3.
+        
+        private Dice _testSum1; //Instantiates private Dice Object called _testSum1.
+        private Dice _testSum2; //Instantiates private Dice Object called _testSum2.
+        private Dice _testSum3; //Instantiates private Dice Object called _testSum3.
+
 
         /// <summary>
         /// Tests the results of the dice rolls and their sums Using Debug.Assert.
         /// </summary>
         public void TestResult() 
         {
+            (_testSum1, _testSum2, _testSum3) = Game.CreateObjects();
             Debug.Assert(ValidRoll(), "Dice is not between the Valid Parameters" ); 
             Debug.Assert(ValidSum(), "Dice sum is not Correct"); 
         }
@@ -29,10 +31,10 @@ namespace Dice_Game_OOP_Assessment
         /// <summary>
         /// Validates whether a dice roll is within the valid range
         /// </summary>
-        /// <returns>True if the dice roll is within valid range, otherwise False</returns>
+        /// <returns>True if the dice roll is within valid range, otherwise false</returns>
         private bool ValidRoll() 
         {
-            return _testRoll.Roll >= 1 && _testRoll.Roll <= 6; 
+            return _testSum1.Roll >= 1 && _testSum1.Roll <= 6; 
         }
 
         /// <summary>
