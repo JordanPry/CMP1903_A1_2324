@@ -16,8 +16,7 @@ namespace Dice_Game_OOP_Assessment
         private static Random _random = new Random(); //instantiate private static value for Random So same seed generation cannot occour.
         private int _roll; //Private Variable to store the DiceRoll
         private static int _roundTotal; //Private static variable shared between all objects.
-        
-
+       
         /// <summary>
         /// Constructor for the Dice class.
         /// Initializes a new instance of the Dice class with a random roll (1-6).
@@ -36,6 +35,7 @@ namespace Dice_Game_OOP_Assessment
         {
             get { return _roll; } 
         }
+
         /// <summary>
         /// gets the total value of dice rolls within the game. Data is Read Only.
         /// </summary>
@@ -44,6 +44,7 @@ namespace Dice_Game_OOP_Assessment
             get { return _roundTotal; } 
 
         }
+
         /// <summary>
         /// Generates a random integer between 1-6 using Random.
         /// </summary>

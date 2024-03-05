@@ -12,11 +12,9 @@ namespace Dice_Game_OOP_Assessment
 {
     internal class Testing
     {
-        
         private Dice _testSum1; //Instantiates private Dice Object called _testSum1.
         private Dice _testSum2; //Instantiates private Dice Object called _testSum2.
         private Dice _testSum3; //Instantiates private Dice Object called _testSum3.
-
 
         /// <summary>
         /// Tests the results of the dice rolls and their sums Using Debug.Assert.
@@ -24,9 +22,16 @@ namespace Dice_Game_OOP_Assessment
         public void TestResult() 
         {
             (_testSum1, _testSum2, _testSum3) = Game.CreateObjects();
-            Debug.Assert(ValidRoll(), "Dice is not between the Valid Parameters" ); 
-            Debug.Assert(ValidSum(), "Dice sum is not Correct"); 
+            if (!ValidRoll() || !ValidSum())
+            {
+                Debug.Assert(ValidRoll(), "Dice is not between the Valid Parameters");
+                Debug.Assert(ValidSum(), "Dice sum is not Correct");
+
+            }
+            else { Console.WriteLine("The Game is running as intended."); }
+            
         }
+       
 
         /// <summary>
         /// Validates whether a dice roll is within the valid range
